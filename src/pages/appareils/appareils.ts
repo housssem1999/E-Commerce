@@ -14,6 +14,7 @@ import { AppareilPage } from '../single-appareil/appareil';
   export class AppareilsPage implements OnInit, OnDestroy {
     appareilsList: Appareil[];
     appaeilsSubscription: Subscription;
+    close: boolean = true;
 
     constructor(private modalCtrl: ModalController,
         private appareilsService: AppareilsService,
@@ -46,7 +47,7 @@ import { AppareilPage } from '../single-appareil/appareil';
     }
 
     onSaveList() {
-
+      this.close =!this.close;
       let loader = this.loadingCtrl.create({
       content: 'Sauvegarde en cours…'});
       loader.present();
@@ -68,7 +69,7 @@ import { AppareilPage } from '../single-appareil/appareil';
     }
 
     onFetchList() {
-      
+      this.close =!this.close;
       let loader = this.loadingCtrl.create({
       content: 'Récuperation en cours…'});
       loader.present();

@@ -23,6 +23,18 @@
         </ion-item>
       </div>
     </ion-list>
+    <button ion-button full style="background-color: #FAD02C;" (click)="onAddDescription()" >Ajouter une ligne</button>
+    
+    <ion-item-divider>Image</ion-item-divider>
+    <ion-item>
+    <ion-row>
+      <button ion-button (click)="addPhoto()" color="danger" style="width: 47%;" outline>
+      <ion-icon name="image" slot="start"></ion-icon >&nbsp; Galerie
+      </button>&ensp;
+    <button ion-button outline (click)="addPhoto('camera')"  color="warning" style="width: 47%;">
+      <ion-icon name="camera" slot="start"></ion-icon>
+      &nbsp; Camera </button>
+    </ion-row></ion-item>
     <button ion-button full (click)="onAddDescription()">Ajouter une ligne</button>
     <button ion-button full (click)="onSubmitForm()">Enregistrer</button>
   </form>

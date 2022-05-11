@@ -16,6 +16,13 @@ import { AppareilFormPage } from '../pages/appareil-form/appareil-form';
 import { AuthService } from '../Services/auth.service';
 import { AuthPage } from '../pages/auth/auth';
 import { AppareilsPage } from '../pages/appareils/appareils';
+import { SqlitePage } from '../pages/sqlite/sqlite';
+import { Camera } from '@ionic-native/camera';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { ImageProvider } from '../providers/image/image';
+import { IdentifyphotoPage } from '../pages/identify-photo/identify-photo';
+import { NativeStoragePage } from '../pages/native-storage/native-storage';
+import { TakePicPage } from '../pages/take-pic/take-pic';
 
 @NgModule({
   declarations: [
@@ -27,8 +34,11 @@ import { AppareilsPage } from '../pages/appareils/appareils';
     AppareilPage,
     OptionsPage,
     AppareilFormPage,
-    AuthPage
-    
+    AuthPage,
+    SqlitePage,
+    NativeStoragePage,
+    IdentifyphotoPage,
+    TakePicPage
   ],
   imports: [
     BrowserModule,
@@ -44,14 +54,21 @@ import { AppareilsPage } from '../pages/appareils/appareils';
     AppareilPage,
     OptionsPage,
     AppareilFormPage,
-    AuthPage
+    AuthPage,
+    SqlitePage,
+    NativeStoragePage,
+    IdentifyphotoPage,
+    TakePicPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AppareilsService,
     AuthService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Camera,
+    FileTransfer,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ImageProvider
   ]
 })
 export class AppModule {}
